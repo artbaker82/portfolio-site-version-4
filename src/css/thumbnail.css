@@ -1,0 +1,28 @@
+.thumbnail-wrapper {
+  background-color: rgba(197, 197, 197, 0.712);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.thumbnail-wrapper:hover {
+  transform: scale(1.5);
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 500ms;
+  cursor: pointer;
+}
+
+.thumbnail-header {
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+}
+
+.thumbnail-body {
+  font-family: "Oswald", sans-serif;
+  padding-top: 3rem;
+}
+
+.thumbnail-link {
+  font-family: "Oswald", sans-serif;
+  padding-top: 2rem;
+}

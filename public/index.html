@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styleMain.css" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+    <title>Arthur Baker</title>
   </head>
+
+  <header>
+    <div>
+      <h1>Arthur Baker</h1>
+      <h2>Front End Web Developer</h2>
+    </div>
+  </header>
+  <div id="nav-wrapper" class="hide-nav">
+    <div class="nav-item">
+      <a class="nav-link" href="">About</a>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="">Projects </a></div>
+    <div class="nav-item"><a class="nav-link nav-link-left" href="">Contact </a></div>
+  </div>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <section>
+      <div class="container">
+        <h3 class="header-text">A little bit about me.</h3>
+        <p class="info-text">
+          Hello! I'm an aspiring web developer currently living in Spokane, Washington. I've been
+          interested in tech for a while now, but ended up studying classical guitar in college. As
+          I've gone deeper into the world of software and coding, the more I've realized the
+          similarities between the two. To put it as suffinctly as possible, I love using creative
+          problem solving skills to produce elegant and beautiful solutions, whether it's a web app
+          or a difficult piece of music.
+        </p>
+        <p class="info-text">
+          The core of my interests lie at the integration of Art and Science, the Classical and
+          Romantic way of thinking. Earlier in life, it was the desire for creative outlet that led
+          me to music. However, I quickly found out that I'm equally drawn to the study of
+          technique, theory, and form in not only music, but all disciplines. In contrast, it wasn't
+          the creative aspect that intially drew me to coding, but the logic and form of it all.
+          However, as I've gone deeper down the rabbit hole, it's the realization of beautiful
+          solutions that will keep me interested for the long run.
+        </p>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <h3 class="header-text">Projects</h3>
+        <h2 class="header-subtext">What I'm working on, past and present</h2>
+        <div id="projects-thumbnail-container"></div>
+      </div>
+    </section>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script src="script.js"></script>
   </body>
 </html>

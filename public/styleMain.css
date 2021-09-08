@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth; }
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-family: 300;
+  color: #212121;
+  /* parallax */
+  perspective: 4px;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+.hide-nav {
+  transform: translateX(100%);
+  height: 0;
+  transition-duration: 500ms; }
+
+#nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition-duration: 500ms; }
+  #nav-wrapper .nav-item {
+    display: flex; }
+    #nav-wrapper .nav-item a {
+      align-self: center;
+      text-decoration: none;
+      font-family: "Oswald", sans-serif;
+      color: #212121;
+      font-size: 1.9rem; }
+      #nav-wrapper .nav-item a:hover {
+        border-bottom: 2px solid;
+        color: #c8583e; }
+
+header {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+  padding-left: 5rem; }
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background-image: url("../media/background.svg");
+  background-size: cover;
+  /* parallax */
+  transform: translateZ(-4px) scale(2); }
+
+header div {
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  padding: 0 30px;
+  font-family: "Lato", sans-serif;
+  transform: translateZ(-2px) scale(1.5); }
+
+header h1 {
+  font-size: 5.5rem;
+  font-weight: bold;
+  color: #212121;
+  margin-bottom: 2rem; }
+
+header h2 {
+  font-size: 2.2rem;
+  color: #535353; }
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  position: relative;
+  z-index: 2; }
+
+.container {
+  margin: auto;
+  /* To center the text horizontally */
+  max-width: 1000px;
+  /* Limiting the width for extra large screens */
+  padding: 3rem 5rem 2rem 3rem; }
+
+.container .header-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 3rem; }
+
+.container p {
+  padding-top: 30px;
+  line-height: 1.8; }
+  .container p .info-text {
+    font-size: "Oswald", sans-serif; }
+
+#projects .header-subtext {
+  padding-top: 30px;
+  font-size: 1.4rem; }
+
+#projects #projects-thumbnail-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 75px; }
+  #projects #projects-thumbnail-container .thumbnail-card {
+    height: 15rem;
+    width: 15rem;
+    background-color: grey; }
+  #projects #projects-thumbnail-container .modal {
+    animation-duration: 200ms;
+    animation-name: modalOpen;
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+    height: 50%;
+    width: 50%;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center; }
+
+@keyframes modalOpen {
+  from {
+    left: 0; }
+  25% {
+    left: 10%; }
+  50% {
+    left: 20%; }
+  75% {
+    left: 30%; }
+  to {
+    left: 50%; } }
