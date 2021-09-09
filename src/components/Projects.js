@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Thumbnail from "./Thumbnail";
 import { PROJECTS_DATA } from "../projectsData";
+import landing from "../images/iterativeLanding.jpg";
 import Modal from "./Modal";
 class Projects extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Projects extends Component {
 
         {this.state.projectToDisplay && (
           <div>
-            <Modal project={this.state.projectToDisplay} />
+            <Modal project={this.state.projectToDisplay} image={landing} />
           </div>
         )}
       </Fragment>

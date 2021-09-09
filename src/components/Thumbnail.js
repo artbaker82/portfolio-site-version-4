@@ -1,14 +1,21 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "../css/thumbnail.css";
 const Thumbnail = ({ project, handleClick }) => {
+  const [mouseEnter, setMouseEnter] = useState(false);
   //return thumbnail, onclick load modal
   console.log(project.title, project.id);
+
   return (
     <Fragment>
-      <div onClick={() => handleClick(project.id)} className="thumbnail-wrapper">
-        <div className="thumbnail-header">{project.title}</div>
-        <div className="thumbnail-body">{project.description}</div>
-        <div className="thumbnail-link">{project.url}</div>
+      <div
+        onMouseEnter={() => setMouseEnter(true)}
+        onMouseLeave={() => setMouseEnter(false)}
+        className="thumbnail-wrapper"
+      >
+        <div className={`thumbnail-image-container ${mouseEnter ? "image-zoom" : ""}   `}></div>
+        <div className="thumbnail-header" onClick={() => handleClick(project.id)}>
+          {project.title}
+        </div>
       </div>
     </Fragment>
   );

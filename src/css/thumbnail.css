@@ -1,20 +1,49 @@
 .thumbnail-wrapper {
-  background-color: rgba(197, 197, 197, 0.712);
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
+  /* background-color: rgba(197, 197, 197, 0.712); */
+
+  height: 250px;
+  width: 250px;
+  position: relative;
 }
 
-.thumbnail-wrapper:hover {
+.thumbnail-image-container {
+  height: 100%;
+  width: auto;
+  background: url("../images/iterativeLanding.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 500ms;
+}
+
+.image-zoom {
+  transform: scale(1.4);
+}
+
+/* .thumbnail-image-container:hover {
+  transform: scale(1.4);
+} */
+
+/* .thumbnail-wrapper:hover {
   transform: scale(1.5);
   transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-duration: 500ms;
   cursor: pointer;
-}
+} */
 
 .thumbnail-header {
   font-family: "Lato", sans-serif;
+  color: white;
+
   font-size: 1.4rem;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  text-shadow: 2px 2px black;
+}
+.thumbnail-header:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .thumbnail-body {

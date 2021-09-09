@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "../css/modal.css";
 
-const Modal = ({ project }) => {
+const Modal = ({ project, image }) => {
   console.log(project.image);
   return (
     <div className="project-modal">
-      <img className="image" src={project.image} alt="background" />
+      <img className="image" src={image} alt="background" />
 
       <div className="title">{project.title}</div>
       <div className="description">{project.description}</div>
