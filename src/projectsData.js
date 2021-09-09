@@ -1,9 +1,11 @@
+import iterativeLanding from "./images/iterativeLanding.jpg";
+
 export const PROJECTS_DATA = [
   {
     title: "Iterative Practice App",
     description: "paragraph here",
     url: "url here",
-    image: "../images/iterativeLanding.jpg",
+    image: iterativeLanding,
     id: 0,
     open: false,
   },

@@ -8,12 +8,16 @@
 
 .thumbnail-image-container {
   height: 100%;
-  width: auto;
-  background: url("../images/iterativeLanding.jpg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 100%;
   transition: all 500ms;
+}
+
+.thumbnail-image-container img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px #00000085;
 }
 
 .image-zoom {

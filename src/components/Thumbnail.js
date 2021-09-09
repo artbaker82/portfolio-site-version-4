@@ -12,7 +12,9 @@ const Thumbnail = ({ project, handleClick }) => {
         onMouseLeave={() => setMouseEnter(false)}
         className="thumbnail-wrapper"
       >
-        <div className={`thumbnail-image-container ${mouseEnter ? "image-zoom" : ""}   `}></div>
+        <div className={`thumbnail-image-container ${mouseEnter ? "image-zoom" : ""}   `}>
+          <img src={project.image} alt="" />
+        </div>
         <div className="thumbnail-header" onClick={() => handleClick(project.id)}>
           {project.title}
         </div>
