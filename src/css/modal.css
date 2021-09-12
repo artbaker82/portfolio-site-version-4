@@ -5,20 +5,42 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: teal;
-  display: flex;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+  border: 2px solid #747474;
+  border-radius: 5px;
+}
 
-  align-items: center;
-  flex-direction: column;
+.image-container {
+  height: 50vh;
+  width: 100%;
+  object-fit: fill;
 }
 
 .image {
-  height: 50%;
-  width: auto;
-  margin-top: 2rem;
+  width: inherit;
+  height: auto;
+}
+
+.info-container {
+  margin: 0 15px 0 15px;
+}
+
+.title-container {
+  border-bottom: 2px solid #747474;
 }
 
 .title {
   font-size: 2rem;
-  font-family: "Lato", sans-serif;
+  padding-bottom: 0.9rem;
+  margin-top: -30px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #747474;
+}
+
+.p-container p {
+  padding-top: 10px;
 }

@@ -13,7 +13,7 @@ export const PROJECTS_DATA = [
     title: "Iterative Landing Page",
     description: "paragraph here",
     url: "url here",
-    image: "../images/iterativeLanding.jpg",
+    image: iterativeLanding,
     id: 1,
     open: false,
   },
