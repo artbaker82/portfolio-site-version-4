@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/modal.css";
 
-const Modal = ({ project }) => {
+const Modal = ({ project, handleExit }) => {
   console.log(project.image);
   return (
     <div className="project-modal">
@@ -19,6 +19,7 @@ const Modal = ({ project }) => {
 
         <div className="tech-stack"></div>
         <div className="url">{project.url}</div>
+        <button onClick={(e) => handleExit(e, project.id)}>Leave Modal</button>
       </div>
     </div>
   );

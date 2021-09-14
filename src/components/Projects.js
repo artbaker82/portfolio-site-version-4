@@ -1,51 +1,62 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState, useRef, useEffect } from "react";
 import Thumbnail from "./Thumbnail";
 import { PROJECTS_DATA } from "../projectsData";
 
 import Modal from "./Modal";
-class Projects extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      projects: PROJECTS_DATA,
-      projectToDisplay: undefined,
-    };
-  }
+const Projects = () => {
+  const [projects] = useState(PROJECTS_DATA);
+  //used to display modal
+  const [projectToDisplay, setProjectToDisplay] = useState(undefined);
+  const node = useRef();
 
-  handleClick = (id) => {
+  useEffect(() => {
+    if (projectToDisplay) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [projectToDisplay]);
+
+  const handleClick = (id) => {
     //set state to change open property/ show modal
-    let itemToChange = this.state.projects.filter((project) => project.id === id)[0];
-    itemToChange.open = !itemToChange.open;
-    console.log(id, itemToChange);
-    this.setState({
-      ...this.state.projects,
-      itemToChange,
-    });
-    this.setState({
-      //set projectToDisplay only if property open is true
-      projectToDisplay: itemToChange.open ? itemToChange : undefined,
-    });
+    let itemToDisplay = projects.filter((project) => project.id === id)[0];
+    setProjectToDisplay(itemToDisplay);
   };
 
-  render() {
-    return (
-      <Fragment>
-        {this.state.projects.map((project) => {
-          return (
-            <div id={project.id} key={project.id}>
-              <Thumbnail project={project} handleClick={this.handleClick} />
-            </div>
-          );
-        })}
+  const handleExit = (e, id) => {
+    e.preventDefault();
+    console.log(id);
+    setProjectToDisplay(undefined);
+  };
 
-        {this.state.projectToDisplay && (
-          <div>
-            <Modal project={this.state.projectToDisplay} />
+  const handleClickOutside = (e) => {
+    if (node.current.contains(e.target)) {
+      return;
+    }
+    setProjectToDisplay(undefined);
+  };
+
+  return (
+    <Fragment>
+      {projects.map((project) => {
+        return (
+          <div id={project.id} key={project.id}>
+            <Thumbnail project={project} handleClick={handleClick} />
           </div>
-        )}
-      </Fragment>
-    );
-  }
-}
+        );
+      })}
+
+      {projectToDisplay && (
+        <div ref={node} className="modalWrapper">
+          <Modal project={projectToDisplay} handleExit={handleExit} />
+        </div>
+      )}
+    </Fragment>
+  );
+};
 
 export default Projects;
