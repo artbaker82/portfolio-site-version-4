@@ -7,7 +7,11 @@ export const PROJECTS_DATA = [
     url: "url here",
     image: iterativeLanding,
     id: 0,
-    open: false,
+    icons: ["html5", "css3", "sass", "npm"],
+    links: [
+      { name: "Code", url: "to github" },
+      { name: "View Site", url: "to site" },
+    ],
   },
   {
     title: "Iterative Landing Page",
@@ -15,6 +19,10 @@ export const PROJECTS_DATA = [
     url: "url here",
     image: iterativeLanding,
     id: 1,
-    open: false,
+    icons: ["react", "html5", "css3", "sass", "npm", "yarn"],
+    links: [
+      { name: "Code", url: "to github" },
+      { name: "View Site", url: "to site" },
+    ],
   },
 ];

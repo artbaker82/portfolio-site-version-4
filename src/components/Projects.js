@@ -29,7 +29,7 @@ const Projects = () => {
 
   const handleExit = (e, id) => {
     e.preventDefault();
-    console.log(id);
+
     setProjectToDisplay(undefined);
   };
 
