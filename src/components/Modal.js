@@ -21,14 +21,14 @@ const Modal = ({ project, handleExit }) => {
         <div className="title-container">
           <div className="title">{project.title}</div>
           <div className="description">
-            <div className="info">{project.description}</div>
+            <div className="info">{project.subTitle}</div>
 
             <div className="link-container">
               {project.links.map((link, idx) => {
                 console.log(idx);
                 if (idx === 0) {
                   return (
-                    <a href={link.url}>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
                       {link.name} <FontAwesomeIcon icon={["fab", "github"]} />
                     </a>
                   );
@@ -39,7 +39,7 @@ const Modal = ({ project, handleExit }) => {
           </div>
         </div>
         <div className="p-container">
-          <p>talking about my app and how super cool it is</p>
+          <p>{project.description}</p>
         </div>
 
         <div className="tech-stack">

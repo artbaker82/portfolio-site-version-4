@@ -9,6 +9,7 @@
   font-family: "Lato", sans-serif;
   border: 2px solid #747474;
   border-radius: 5px;
+  overflow-y: scroll;
 }
 
 .image-container {
@@ -26,14 +27,15 @@
   margin: 0 15px 0 15px;
 }
 
-.title-container {
-  /* border-bottom: 2px solid #747474; */
-}
-
 .title {
   font-size: 2rem;
   padding-bottom: 0.9rem;
   margin-top: -30px;
+}
+
+.title-container {
+  border-bottom: 2px solid #747474;
+  padding-bottom: 0.9rem;
 }
 
 .description {
@@ -68,6 +70,7 @@
 
 .p-container p {
   padding-top: 10px;
+  font-size: 0.8rem;
 }
 
 .sub-header {
