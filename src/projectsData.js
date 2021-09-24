@@ -16,11 +16,11 @@ export const PROJECTS_DATA = [
   },
   {
     title: "Iterative Landing Page",
-    subTitle: "paragraph here",
-    description: "",
+    subTitle: "Product Landing Page",
+    description: "The landing page I build for the Bootstrap module of my bootcamp",
     image: iterativeLanding,
     id: 1,
-    icons: ["react", "html5", "css3", "sass", "npm", "yarn"],
+    icons: ["react", "html5", "css3", "sass", "js", "bootstrap"],
     links: [
       { name: "Code", url: "to github" },
       { name: "View Site", url: "to site" },
@@ -33,7 +33,7 @@ export const PROJECTS_DATA = [
       "A group project done with a few cohorts from my coding bootcamp. We did this using React and Redux for state management.",
     image: loginScreen,
     id: 2,
-    icons: ["react", "html5", "css3"],
+    icons: ["react", "html5", "css3", "js"],
     links: [
       { name: "Code", url: "https://github.com/Revlisc/desktopStudy" },
       // { name: "View Site", url: "to site" },

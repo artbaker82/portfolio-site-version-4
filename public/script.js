@@ -21,22 +21,37 @@ body.addEventListener("scroll", () => {
   }
 });
 
-const modalData = [
-  {
-    title: "Iterative Practice App",
-    description: "paragraph here",
-    url: "url here",
-    id: 0,
-    open: false,
-  },
-  {
-    title: "Iterative Landing Page",
-    description: "paragraph here",
-    url: "url here",
-    id: 1,
-    open: false,
-  },
-];
+//create reference to each section
+
+const sections = document.querySelectorAll(".main-section");
+
+const view = {
+  [sections[0].id]: false,
+  [sections[1].id]: false,
+};
+console.log(view);
+
+observer = new IntersectionObserver((entries) => {
+  let id = entries[0].target.id;
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > -20) {
+      console.log(id, "in view");
+      view[id] = true;
+
+      navLinks.forEach((link) => {
+        if (link.id === `${id}-link`) {
+          console.log(link.id);
+        }
+      });
+    } else {
+      console.log(id, "out of view");
+    }
+  });
+});
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
 
 // const createModal = (id) => {
 //   let projectModal = document.createElement("div");
