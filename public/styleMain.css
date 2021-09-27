@@ -225,7 +225,60 @@ section {
 
 #contact {
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: #c8583e;
+}
+
+#contact #contact-link-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 100px;
+}
+
+#contact #contact-link-container .icon-link {
+  font-size: 8rem;
+  -webkit-transition: -webkit-box-flex 500ms;
+  transition: -webkit-box-flex 500ms;
+  transition: flex 500ms;
+  transition: flex 500ms, -webkit-box-flex 500ms, -ms-flex 500ms;
+}
+
+#contact #contact-link-container .icon-link p {
+  font-size: 1rem;
+}
+
+#contact #contact-link-container .icon-link p.link-text {
+  -webkit-animation: anim 500ms forwards ease-out;
+          animation: anim 500ms forwards ease-out;
+}
+
+@-webkit-keyframes anim {
+  from {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim {
+  from {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes modalOpen {

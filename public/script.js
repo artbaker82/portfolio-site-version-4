@@ -59,6 +59,30 @@ function intersectionHandler(entry) {
   }
 }
 
+const contactLinks = document.querySelectorAll(".icon-link");
+const textConfig = {
+  email: "Email me at artbaker82@gmail.com",
+  github: "View my Github profile",
+  linkedIn: "View my linkedIn profile",
+};
+contactLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    const text = document.createElement("p");
+    link.style.flex = 2;
+    text.classList.add("link-text");
+    text.textContent = textConfig[link.id];
+    link.appendChild(text);
+  });
+});
+contactLinks.forEach((link) => {
+  link.addEventListener("mouseleave", () => {
+    const text = link.querySelector(".link-text");
+    console.log(text);
+    link.removeChild(text);
+    link.style.flex = 1;
+  });
+});
+
 // const createModal = (id) => {
 //   let projectModal = document.createElement("div");
 

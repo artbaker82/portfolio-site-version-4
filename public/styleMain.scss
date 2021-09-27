@@ -195,7 +195,34 @@ section {
 
 #contact {
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: $color-accent;
+
+  #contact-link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    .icon-link {
+      font-size: 8rem;
+      transition: flex 500ms;
+      p {
+        font-size: 1rem;
+        &.link-text {
+          animation: anim 500ms forwards ease-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes anim {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes modalOpen {
