@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -19,40 +20,62 @@ body {
   font-family: 300;
   color: #212121;
   /* parallax */
-  perspective: 4px;
+  -webkit-perspective: 4px;
+          perspective: 4px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .hide-nav {
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   height: 0;
-  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
 
 #nav-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   height: 10vh;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
-  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
 }
+
 #nav-wrapper .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 #nav-wrapper .nav-item a {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-decoration: none;
   font-family: "Oswald", sans-serif;
   color: #212121;
   font-size: 1.9rem;
 }
+
 #nav-wrapper .nav-item a:hover {
   border-bottom: 2px solid;
+  color: #c8583e;
+}
+
+#nav-wrapper .nav-item a.active {
   color: #c8583e;
 }
 
@@ -60,7 +83,8 @@ header {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   padding-left: 5rem;
 }
 
@@ -75,16 +99,18 @@ header::before {
   background-image: url("../media/background.svg");
   background-size: cover;
   /* parallax */
-  transform: translateZ(-4px) scale(2);
+  -webkit-transform: translateZ(-4px) scale(2);
+          transform: translateZ(-4px) scale(2);
 }
 
-header div#main {
+header div {
   position: absolute;
   z-index: 1;
   top: 40%;
   padding: 0 30px;
   font-family: "Lato", sans-serif;
-  transform: translateZ(-2px) scale(1.5);
+  -webkit-transform: translateZ(-2px) scale(1.5);
+          transform: translateZ(-2px) scale(1.5);
 }
 
 header h1 {
@@ -100,22 +126,26 @@ header h2 {
 }
 
 .icon-container {
-  margin-top: 1rem;
+  position: absolute;
+  top: 15rem;
+  left: 1rem;
   font-size: 2rem;
+}
+
+.icon-container .fa-github {
+  margin-left: 20px;
 }
 
 .icon-container a {
   text-decoration: none;
   color: #535353;
-}
-.icon-container a:hover {
-  text-decoration: none;
-  color: black;
-  transition: all 700ms;
+  cursor: pointer;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
-.fa-linkedin {
-  margin-right: 2rem;
+.icon-container a:hover {
+  color: black;
 }
 
 section {
@@ -144,6 +174,7 @@ section {
   padding-top: 30px;
   line-height: 1.8;
 }
+
 .container p .info-text {
   font-size: "Oswald", sans-serif;
 }
@@ -154,28 +185,65 @@ section {
 }
 
 #projects #projects-thumbnail-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 75px;
 }
+
 #projects #projects-thumbnail-container .thumbnail-card {
   height: 15rem;
   width: 15rem;
   background-color: grey;
 }
+
 #projects #projects-thumbnail-container .modal {
-  animation-duration: 200ms;
-  animation-name: modalOpen;
-  animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+  -webkit-animation-duration: 200ms;
+          animation-duration: 200ms;
+  -webkit-animation-name: modalOpen;
+          animation-name: modalOpen;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+          animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
   height: 50%;
   width: 50%;
   background-color: grey;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact {
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+@-webkit-keyframes modalOpen {
+  from {
+    left: 0;
+  }
+  25% {
+    left: 10%;
+  }
+  50% {
+    left: 20%;
+  }
+  75% {
+    left: 30%;
+  }
+  to {
+    left: 50%;
+  }
 }
 
 @keyframes modalOpen {
@@ -195,3 +263,4 @@ section {
     left: 50%;
   }
 }
+/*# sourceMappingURL=styleMain.css.map */

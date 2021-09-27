@@ -63,6 +63,9 @@ body {
         border-bottom: 2px solid;
         color: $color-accent;
       }
+      &.active {
+        color: $color-accent;
+      }
     }
   }
 }
@@ -109,6 +112,27 @@ header h1 {
 header h2 {
   font-size: 2.2rem;
   color: rgb(83, 83, 83);
+}
+
+.icon-container {
+  position: absolute;
+  top: 15rem;
+  left: 1rem;
+  font-size: 2rem;
+
+  .fa-github {
+    margin-left: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(83, 83, 83);
+    cursor: pointer;
+    transition: all 500ms;
+  }
+  a:hover {
+    color: black;
+  }
 }
 
 section {
@@ -167,6 +191,11 @@ section {
       justify-content: center;
     }
   }
+}
+
+#contact {
+  height: 100vh;
+  background-color: antiquewhite;
 }
 
 @keyframes modalOpen {

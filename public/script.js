@@ -25,33 +25,39 @@ body.addEventListener("scroll", () => {
 
 const sections = document.querySelectorAll(".main-section");
 
-const view = {
-  [sections[0].id]: false,
-  [sections[1].id]: false,
+//
+
+let options = {
+  threshold: 0.2,
 };
-console.log(view);
-
-observer = new IntersectionObserver((entries) => {
-  let id = entries[0].target.id;
+let observer = new IntersectionObserver(function (entries, self) {
   entries.forEach((entry) => {
-    if (entry.intersectionRatio > -20) {
-      console.log(id, "in view");
-      view[id] = true;
-
-      navLinks.forEach((link) => {
-        if (link.id === `${id}-link`) {
-          console.log(link.id);
-        }
-      });
-    } else {
-      console.log(id, "out of view");
+    console.log(entry);
+    if (entry.isIntersecting) {
+      intersectionHandler(entry);
     }
   });
-});
+}, options);
 
 sections.forEach((section) => {
   observer.observe(section);
 });
+
+function intersectionHandler(entry) {
+  const id = entry.target.id;
+  console.log(id);
+  const currentlyActive = document.querySelector(".active");
+  const shouldBeActive = document.querySelector(`#${id}-link`);
+  console.log("currently", currentlyActive);
+  console.log("should be active", shouldBeActive);
+
+  if (currentlyActive) {
+    currentlyActive.classList.remove("active");
+  }
+  if (shouldBeActive) {
+    shouldBeActive.classList.add("active");
+  }
+}
 
 // const createModal = (id) => {
 //   let projectModal = document.createElement("div");
