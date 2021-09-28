@@ -136,7 +136,7 @@ header h2 {
   margin-left: 20px;
 }
 
-.icon-container a {
+.icon-container a.header-link {
   text-decoration: none;
   color: #535353;
   cursor: pointer;
@@ -244,15 +244,34 @@ section {
   transition: -webkit-box-flex 500ms;
   transition: flex 500ms;
   transition: flex 500ms, -webkit-box-flex 500ms, -ms-flex 500ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#contact #contact-link-container .icon-link p {
-  font-size: 1rem;
+#contact #contact-link-container .icon-link .text-hide {
+  display: none;
 }
 
-#contact #contact-link-container .icon-link p.link-text {
+#contact #contact-link-container .icon-link .text-anim-in {
   -webkit-animation: anim 500ms forwards ease-out;
           animation: anim 500ms forwards ease-out;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  font-family: "Oswald", sans-serif;
+}
+
+#contact #contact-link-container .icon-link .text-anim-out {
+  -webkit-animation: anim-out 500ms forwards ease-out;
+          animation: anim-out 500ms forwards ease-out;
 }
 
 @-webkit-keyframes anim {
@@ -278,6 +297,32 @@ section {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim-out {
+  from {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes anim-out {
+  from {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+    opacity: 0;
   }
 }
 

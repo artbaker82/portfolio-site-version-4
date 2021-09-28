@@ -32,7 +32,6 @@ let options = {
 };
 let observer = new IntersectionObserver(function (entries, self) {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       intersectionHandler(entry);
     }
@@ -48,8 +47,6 @@ function intersectionHandler(entry) {
   console.log(id);
   const currentlyActive = document.querySelector(".active");
   const shouldBeActive = document.querySelector(`#${id}-link`);
-  console.log("currently", currentlyActive);
-  console.log("should be active", shouldBeActive);
 
   if (currentlyActive) {
     currentlyActive.classList.remove("active");
@@ -60,28 +57,55 @@ function intersectionHandler(entry) {
 }
 
 const contactLinks = document.querySelectorAll(".icon-link");
+
 const textConfig = {
-  email: "Email me at artbaker82@gmail.com",
-  github: "View my Github profile",
-  linkedIn: "View my linkedIn profile",
+  email: ["Email me at artbaker82@gmail.com"],
+  github: ["View my Github profile", "https://github.com/artbaker82"],
+  linkedIn: ["View my linkedIn profile", "https://www.linkedin.com/in/arthur-baker-a88818188/"],
 };
+
 contactLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
-    const text = document.createElement("p");
     link.style.flex = 2;
-    text.classList.add("link-text");
-    text.textContent = textConfig[link.id];
-    link.appendChild(text);
+    const text = link.querySelector(".text-hide");
+    setTimeout(() => {
+      text.classList.remove("text-hide");
+      text.classList.add("text-anim-in");
+    }, 400);
   });
 });
 contactLinks.forEach((link) => {
   link.addEventListener("mouseleave", () => {
-    const text = link.querySelector(".link-text");
-    console.log(text);
-    link.removeChild(text);
+    const text = link.querySelector(".text-anim-in");
+    text.classList.remove("text-anim-in");
+    text.classList.add("text-hide");
+
     link.style.flex = 1;
   });
 });
+
+// contactLinks.forEach((link) => {
+//   link.addEventListener("mouseenter", () => {
+//     const text = document.createElement("a");
+//     text.href = textConfig[link.id][1];
+//     text.setAttribute("target", "_blank");
+//     text.setAttribute("rel", "noopener noreferrer");
+//     link.style.flex = 2;
+//     text.classList.add("link-text");
+//     text.textContent = textConfig[link.id][0];
+//     window.setTimeout(() => {
+//       link.appendChild(text);
+//     }, 250);
+//   });
+// });
+// contactLinks.forEach((link) => {
+//   link.addEventListener("mouseleave", () => {
+//     const text = link.querySelector(".link-text");
+
+//     link.removeChild(text);
+//     link.style.flex = 1;
+//   });
+// });
 
 // const createModal = (id) => {
 //   let projectModal = document.createElement("div");

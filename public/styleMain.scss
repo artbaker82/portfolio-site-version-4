@@ -124,7 +124,7 @@ header h2 {
     margin-left: 20px;
   }
 
-  a {
+  a.header-link {
     text-decoration: none;
     color: rgb(83, 83, 83);
     cursor: pointer;
@@ -201,14 +201,26 @@ section {
     display: flex;
     justify-content: space-between;
     margin-top: 100px;
+
     .icon-link {
       font-size: 8rem;
       transition: flex 500ms;
-      p {
-        font-size: 1rem;
-        &.link-text {
-          animation: anim 500ms forwards ease-out;
-        }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .text-hide {
+        display: none;
+      }
+      .text-anim-in {
+        animation: anim 500ms forwards ease-out;
+        font-size: 2rem;
+        text-decoration: none;
+        color: black;
+        font-family: $text-font;
+      }
+      .text-anim-out {
+        animation: anim-out 500ms forwards ease-out;
       }
     }
   }
@@ -222,6 +234,17 @@ section {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@keyframes anim-out {
+  from {
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
   }
 }
 
