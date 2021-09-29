@@ -150,7 +150,6 @@ header h2 {
 
 section {
   width: 100%;
-  height: 100vh;
   background: white;
   position: relative;
   z-index: 2;
@@ -168,6 +167,10 @@ section {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 3rem;
+}
+
+#about {
+  height: auto;
 }
 
 .container p {
@@ -200,31 +203,7 @@ section {
   background-color: grey;
 }
 
-#projects #projects-thumbnail-container .modal {
-  -webkit-animation-duration: 200ms;
-          animation-duration: 200ms;
-  -webkit-animation-name: modalOpen;
-          animation-name: modalOpen;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
-          animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
-  height: 50%;
-  width: 50%;
-  background-color: grey;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 #contact {
-  height: 100vh;
   background-color: #c8583e;
 }
 
@@ -235,7 +214,7 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 25vh;
 }
 
 #contact #contact-link-container .icon-link {
@@ -272,6 +251,149 @@ section {
 #contact #contact-link-container .icon-link .text-anim-out {
   -webkit-animation: anim-out 500ms forwards ease-out;
           animation: anim-out 500ms forwards ease-out;
+}
+
+@media (min-width: 500px) {
+  section {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 500px) {
+  #nav-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 10vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+  }
+  #nav-wrapper .nav-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #nav-wrapper .nav-item a {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    color: #212121;
+    font-size: 1.5rem;
+  }
+  #nav-wrapper .nav-item a:hover {
+    border-bottom: 2px solid;
+    color: #c8583e;
+  }
+  #nav-wrapper .nav-item a.active {
+    color: #c8583e;
+  }
+  header div {
+    left: 0;
+    top: 0;
+  }
+  header div .icon-container {
+    top: 25rem;
+    left: 1.5rem;
+    margin-top: 15px;
+  }
+  .container {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+  .container h3 {
+    text-align: center;
+  }
+  .container h2 {
+    text-align: center;
+  }
+  #projects .header-subtext {
+    padding-top: 30px;
+    font-size: 1.4rem;
+  }
+  #projects #projects-thumbnail-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 75px;
+  }
+  #projects #projects-thumbnail-container .thumbnail-card {
+    height: 6rem;
+    width: 6rem;
+    background-color: grey;
+  }
+  #contact {
+    background-color: #c8583e;
+  }
+  #contact #contact-link-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 75px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #contact #contact-link-container .icon-link {
+    font-size: 7rem;
+    -webkit-transition: -webkit-box-flex 500ms;
+    transition: -webkit-box-flex 500ms;
+    transition: flex 500ms;
+    transition: flex 500ms, -webkit-box-flex 500ms, -ms-flex 500ms;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #contact #contact-link-container .icon-link .text-hide {
+    display: none;
+  }
+  #contact #contact-link-container .icon-link .text-anim-in {
+    -webkit-animation: anim 500ms forwards ease-out;
+            animation: anim 500ms forwards ease-out;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    font-family: "Oswald", sans-serif;
+  }
+  #contact #contact-link-container .icon-link .text-anim-out {
+    -webkit-animation: anim-out 500ms forwards ease-out;
+            animation: anim-out 500ms forwards ease-out;
+  }
 }
 
 @-webkit-keyframes anim {

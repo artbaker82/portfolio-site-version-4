@@ -28,7 +28,7 @@ const sections = document.querySelectorAll(".main-section");
 //
 
 let options = {
-  threshold: 0.2,
+  threshold: 0.5,
 };
 let observer = new IntersectionObserver(function (entries, self) {
   entries.forEach((entry) => {
