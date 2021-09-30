@@ -150,7 +150,7 @@ header h2 {
 
 section {
   width: 100%;
-  background: white;
+  background: #f1f1f1;
   position: relative;
   z-index: 2;
 }
@@ -170,7 +170,7 @@ section {
 }
 
 #about {
-  height: auto;
+  height: 60vh;
 }
 
 .container p {
@@ -204,7 +204,7 @@ section {
 }
 
 #contact {
-  background-color: #c8583e;
+  background-image: url("./media/wave-2.svg");
 }
 
 #contact #contact-link-container {
@@ -251,12 +251,6 @@ section {
 #contact #contact-link-container .icon-link .text-anim-out {
   -webkit-animation: anim-out 500ms forwards ease-out;
           animation: anim-out 500ms forwards ease-out;
-}
-
-@media (min-width: 500px) {
-  section {
-    height: 100vh;
-  }
 }
 
 @media (max-width: 500px) {
@@ -318,6 +312,9 @@ section {
   .container h2 {
     text-align: center;
   }
+  #about {
+    height: auto;
+  }
   #projects .header-subtext {
     padding-top: 30px;
     font-size: 1.4rem;
@@ -343,9 +340,6 @@ section {
     width: 6rem;
     background-color: grey;
   }
-  #contact {
-    background-color: #c8583e;
-  }
   #contact #contact-link-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -363,7 +357,7 @@ section {
             align-items: center;
   }
   #contact #contact-link-container .icon-link {
-    font-size: 7rem;
+    font-size: 5rem;
     -webkit-transition: -webkit-box-flex 500ms;
     transition: -webkit-box-flex 500ms;
     transition: flex 500ms;
