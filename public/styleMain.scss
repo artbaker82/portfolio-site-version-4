@@ -30,6 +30,10 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   background: rgb(241, 241, 241);
+
+  p {
+    font-family: $text-font;
+  }
 }
 
 .hide-nav {
@@ -157,13 +161,36 @@ section {
 }
 
 #about {
-  height: 60vh;
+  height: 100vh;
+  h3.header-text {
+    margin-top: 25px;
+  }
+  h4.header-text {
+    margin-top: 50px;
+  }
 }
 .container p {
   padding-top: 30px;
-  line-height: 1.8;
-  .info-text {
-    font-size: $text-font;
+
+  line-height: 2.2;
+  font-size: 1.3rem;
+}
+
+#list-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  li {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-family: $text-font;
+  }
+  .left-container {
+    flex: 1;
+  }
+  .right-container {
+    flex: 1;
   }
 }
 
@@ -197,11 +224,9 @@ section {
     // }
   }
 }
-// #wave {
-//   background-image: url("./media/wave-2.svg");
-//   height: inherit;
-//   background-repeat: no-repeat;
-// }
+#wave {
+  margin-top: 50px;
+}
 
 #contact {
   // background-color: $color-accent;
@@ -234,6 +259,12 @@ section {
       }
     }
   }
+}
+
+#bottom {
+  height: 100px;
+  width: 100vw;
+  background-color: rgba(68, 90, 124, 0.65);
 }
 
 // @media (min-width: 500px) {

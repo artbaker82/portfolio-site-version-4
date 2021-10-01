@@ -27,6 +27,10 @@ body {
   background: #f1f1f1;
 }
 
+body p {
+  font-family: "Oswald", sans-serif;
+}
+
 .hide-nav {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
@@ -171,16 +175,51 @@ section {
 }
 
 #about {
-  height: 60vh;
+  height: 100vh;
+}
+
+#about h3.header-text {
+  margin-top: 25px;
+}
+
+#about h4.header-text {
+  margin-top: 50px;
 }
 
 .container p {
   padding-top: 30px;
-  line-height: 1.8;
+  line-height: 2.2;
+  font-size: 1.3rem;
 }
 
-.container p .info-text {
-  font-size: "Oswald", sans-serif;
+#list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#list-container li {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-family: "Oswald", sans-serif;
+}
+
+#list-container .left-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#list-container .right-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 #projects .header-subtext {
@@ -202,6 +241,10 @@ section {
   height: 15rem;
   width: 15rem;
   background-color: grey;
+}
+
+#wave {
+  margin-top: 50px;
 }
 
 #contact {
@@ -252,6 +295,12 @@ section {
 #contact #contact-link-container .icon-link .text-anim-out {
   -webkit-animation: anim-out 500ms forwards ease-out;
           animation: anim-out 500ms forwards ease-out;
+}
+
+#bottom {
+  height: 100px;
+  width: 100vw;
+  background-color: rgba(68, 90, 124, 0.65);
 }
 
 @media (max-width: 500px) {
