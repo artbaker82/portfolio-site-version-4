@@ -15,7 +15,7 @@ body.addEventListener("scroll", () => {
   }
 
   if (navPos <= 0) {
-    nav.style.backgroundColor = "#c0baa2";
+    nav.style.backgroundColor = "#000000";
   } else {
     nav.style.backgroundColor = "none";
   }
@@ -66,108 +66,37 @@ const textConfig = {
 
 contactLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
-    link.style.flex = 2;
     const text = link.querySelector(".text-hide");
-    setTimeout(() => {
-      text.classList.remove("text-hide");
-      text.classList.add("text-anim-in");
-    }, 400);
+    const icon = link.querySelector(".icon");
+    icon.classList.add("icon-anim");
+    icon.classList.remove("icon-anim-out");
+    text.classList.remove("text-hide");
+    text.classList.add("text-anim-in");
   });
 });
 contactLinks.forEach((link) => {
   link.addEventListener("mouseleave", () => {
     const text = link.querySelector(".text-anim-in");
+    const icon = link.querySelector("span");
+    icon.classList.remove("icon-anim");
+    icon.classList.add("icon-anim-out");
     text.classList.remove("text-anim-in");
     text.classList.add("text-hide");
-
-    link.style.flex = 1;
   });
 });
 
-// contactLinks.forEach((link) => {
-//   link.addEventListener("mouseenter", () => {
-//     const text = document.createElement("a");
-//     text.href = textConfig[link.id][1];
-//     text.setAttribute("target", "_blank");
-//     text.setAttribute("rel", "noopener noreferrer");
-//     link.style.flex = 2;
-//     text.classList.add("link-text");
-//     text.textContent = textConfig[link.id][0];
-//     window.setTimeout(() => {
-//       link.appendChild(text);
-//     }, 250);
-//   });
-// });
-// contactLinks.forEach((link) => {
-//   link.addEventListener("mouseleave", () => {
-//     const text = link.querySelector(".link-text");
+//intersection observer for section fade in
 
-//     link.removeChild(text);
-//     link.style.flex = 1;
-//   });
-// });
+const sectionsToAnimate = document.querySelectorAll(".animate");
 
-// const createModal = (id) => {
-//   let projectModal = document.createElement("div");
+observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0) {
+      entry.target.style.animation = `anim2 1s forwards ease-out`;
+    }
+  });
+});
 
-//   thumbnailContainer.appendChild(projectModal);
-//   projectModal.classList.add("modal");
-//   //render content
-//   let title = document.createElement("h3");
-//   let descripton = document.createElement("p");
-
-//   descripton.textContent = modalData[id].description;
-//   title.textContent = modalData[id].title;
-
-//   projectModal.appendChild(title);
-//   projectModal.appendChild(descripton);
-// };
-// //check if modal is open
-// const openModal = () => {
-//   const openModals = modalData.filter((item) => item.open);
-//   return openModals.length <= 0 ? false : true;
-// };
-
-// //create elements dynamically
-// modalData.forEach((item) => {
-//   const thumbnail = document.createElement("div");
-//   thumbnail.classList.add("thumbnail-card");
-//   thumbnail.setAttribute("id", `${item.id}`);
-//   thumbnailContainer.appendChild(thumbnail);
-// });
-// const thumbnails = document.querySelectorAll(".thumbnail-card");
-
-// console.log(thumbnails);
-
-// let openId;
-
-// thumbnails.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     openId = e.target.id;
-//     console.log(openId);
-//     createModal(openId);
-//   });
-// });
-
-// thumbnails.forEach((item) => {
-//   console.log(item.id);
-
-//   console.log("openModal", openModal());
-//   item.addEventListener("click", (e) => {
-//     if (!openModal()) {
-//       openId = e.target.id;
-//       modalData[openId].open = true;
-//       item.classList.add("modal-expand");
-//       console.log(openModal(), openId);
-//     }
-//     //if modal is clicked twice
-//     else if (e.target.id == openId) {
-//       console.log(item.id);
-//       item.classList.remove("modal-expand");
-//       modalData[openId].open = false;
-//       openId = "";
-//     } else {
-//       console.log(e.target.id);
-//     }
-//   });
-// });
+sectionsToAnimate.forEach((section) => {
+  observer.observe(section);
+});

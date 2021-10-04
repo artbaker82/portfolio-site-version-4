@@ -1,5 +1,6 @@
 import iterativeLanding from "./images/iterativeLanding.jpg";
 import loginScreen from "./images/LoginScreen.svg";
+
 export const PROJECTS_DATA = [
   {
     title: "Iterative Practice App",
@@ -36,6 +37,19 @@ export const PROJECTS_DATA = [
     icons: ["react", "html5", "css3", "js"],
     links: [
       { name: "Code", url: "https://github.com/Revlisc/desktopStudy" },
+      // { name: "View Site", url: "to site" },
+    ],
+  },
+  {
+    title: "React Native Study App",
+    subTitle: "flash cards style app",
+    description:
+      "A group project done with a few cohorts from my coding bootcamp. We did this using React and Redux for state management.",
+    image: loginScreen,
+    id: 3,
+    icons: ["react", "js"],
+    links: [
+      { name: "Code", url: "https://github.com/Revlisc/studyapp" },
       // { name: "View Site", url: "to site" },
     ],
   },

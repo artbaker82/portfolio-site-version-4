@@ -1,8 +1,9 @@
 .thumbnail-wrapper {
   /* background-color: rgba(197, 197, 197, 0.712); */
 
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -13,8 +14,8 @@
 }
 
 .thumbnail-image-container img {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 2px 2px 4px #00000085;

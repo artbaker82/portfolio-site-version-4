@@ -51,7 +51,6 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  //background-color: #c0baa2;
 
   z-index: 100;
   transition-duration: 500ms;
@@ -62,7 +61,7 @@ body {
       align-self: center;
       text-decoration: none;
       font-family: $text-font;
-      color: $on-primary;
+      color: #ffffff;
       font-size: 1.9rem;
       &:hover {
         border-bottom: 2px solid;
@@ -161,7 +160,7 @@ section {
 }
 
 #about {
-  height: 100vh;
+  //height: 100vh;
   h3.header-text {
     margin-top: 25px;
   }
@@ -181,6 +180,9 @@ section {
   flex-direction: row;
   margin-top: 25px;
   margin-bottom: 25px;
+  ul {
+    line-height: 1.6;
+  }
   li {
     margin-top: 10px;
     font-size: 1.5rem;
@@ -195,6 +197,7 @@ section {
 }
 
 #projects {
+  height: 100vh;
   .header-subtext {
     padding-top: 30px;
     font-size: 1.4rem;
@@ -203,6 +206,8 @@ section {
     display: flex;
     justify-content: space-between;
     padding-top: 75px;
+    flex-wrap: wrap;
+
     .thumbnail-card {
       height: 15rem;
       width: 15rem;
@@ -224,26 +229,35 @@ section {
     // }
   }
 }
-#wave {
-  margin-top: 50px;
-}
 
 #contact {
-  // background-color: $color-accent;
-  background-image: url("./media/wave-2.svg");
+  background-color: #8594aa;
+  height: 100vh;
+  .header-text {
+    text-align: center;
+  }
 
   #contact-link-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 25vh;
+    align-items: center;
+    margin-top: 10vh;
+    flex-direction: column;
 
     .icon-link {
       font-size: 8rem;
-      transition: flex 500ms;
+      //transition: flex 500ms;
       display: flex;
       flex-direction: row;
       align-items: center;
+      margin-top: 10px;
 
+      .icon-anim {
+        animation: icon-anim 500ms forwards ease-out;
+      }
+      .icon-anim-out {
+        animation: icon-anim-out 500ms forwards ease-out;
+      }
       .text-hide {
         display: none;
       }
@@ -261,10 +275,56 @@ section {
   }
 }
 
-#bottom {
-  height: 100px;
-  width: 100vw;
-  background-color: rgba(68, 90, 124, 0.65);
+@keyframes anim {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim-out {
+  from {
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes icon-anim {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-30px);
+  }
+}
+@keyframes icon-anim-out {
+  from {
+    transform: translateX(-30px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+//animations for section fade in-out
+
+@keyframes anim2 {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 // @media (min-width: 500px) {
@@ -295,7 +355,7 @@ section {
         align-self: center;
         text-decoration: none;
         font-family: $text-font;
-        color: $on-primary;
+
         font-size: 1.5rem;
         &:hover {
           border-bottom: 2px solid;
@@ -335,6 +395,7 @@ section {
   }
 
   #projects {
+    height: auto;
     .header-subtext {
       padding-top: 30px;
       font-size: 1.4rem;
@@ -394,28 +455,6 @@ section {
         }
       }
     }
-  }
-}
-
-@keyframes anim {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes anim-out {
-  from {
-    transform: translateX(100px);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100px);
-    opacity: 0;
   }
 }
 
