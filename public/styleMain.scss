@@ -121,7 +121,7 @@ header h2 {
 .icon-container {
   position: absolute;
   top: 15rem;
-  left: 1rem;
+  left: 1.2rem;
   font-size: 2rem;
 
   .fa-github {
@@ -198,6 +198,8 @@ section {
 
 #projects {
   height: 100vh;
+  // position: sticky;
+  // top: 0;
   .header-subtext {
     padding-top: 30px;
     font-size: 1.4rem;
@@ -273,6 +275,10 @@ section {
       }
     }
   }
+}
+//set every item to animate opacity 0
+.animate {
+  opacity: 0;
 }
 
 @keyframes anim {

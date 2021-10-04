@@ -133,7 +133,7 @@ header h2 {
 .icon-container {
   position: absolute;
   top: 15rem;
-  left: 1rem;
+  left: 1.2rem;
   font-size: 2rem;
 }
 
@@ -316,6 +316,10 @@ section {
 #contact #contact-link-container .icon-link .text-anim-out {
   -webkit-animation: anim-out 500ms forwards ease-out;
           animation: anim-out 500ms forwards ease-out;
+}
+
+.animate {
+  opacity: 0;
 }
 
 @-webkit-keyframes anim {

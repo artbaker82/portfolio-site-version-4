@@ -92,7 +92,7 @@ const sectionsToAnimate = document.querySelectorAll(".animate");
 observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {
-      entry.target.style.animation = `anim2 1s forwards ease-out`;
+      entry.target.style.animation = `anim2 1s ${entry.target.dataset.delay} forwards ease-out`;
     }
   });
 });
