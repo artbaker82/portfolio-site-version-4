@@ -11,7 +11,8 @@ export const PROJECTS_DATA = [
       difficulty in the beginning navigating the complexities of using Git. We were all familiar pushing changes to our own personal project repos on Github,
       but as for the true purpose of Git, we were all pretty much in the dark. But after some careful reading and a few youtube tutorials, were were all making pull requests and merging like pros!
       Aside from getting great experience with Git, this project also solidified some React fundamentals such as building reusable components, and the application of presentational and container components.
-      But more importantly, the importance of clear communication, both verbally and in code became very clear as we worked on this app.`,
+      But more importantly, the importance of clear communication, both verbally and in code became very clear as we worked on this app. Moving forward, as I learn more about backend development,
+      I build a REST API and store user data using MongoDB.`,
     image: loginScreen,
     id: 2,
     icons: ["react", "html5", "css3", "js"],
@@ -43,7 +44,10 @@ export const PROJECTS_DATA = [
     title: "Iterative Practice App",
     subTitle: "Music Practice App",
     description:
-      "This is my first real project using React, I was inspired by music practice apps such as Modacity and Andante",
+      `This is the first project I build on my own using React and Redux. I was inspired by practice joural apps like Modacity and Andante. Being a musician, I have struggled with organizing and documenting my practice sessions.
+      I've had many friends and colleages who keep logs of each practice session, and the idea always intrigued me. When brainstorming about what to build for my first React project, a practice app seemed like a great option.
+      This project is far from complete, but after we moved on to React Native, I had a hard time finding time to work on this app. As I become a more experienced MERN stack developer, this will be a project that I will continually work on. Looking at the code after a break, the first
+      thing that I notice is the prop drilling. This will be the first thing I fix when I revisit this project. Some things to add are, a component to record practice sessions, leave notes a specific timestamps during the session, and track time spend practicing. And of course, give the whole project a facelift in terms of styling, which is absolutely my weakness as a developer.`,
     image: iterativeLanding,
     id: 0,
     icons: ["react", "js", "html5", "css3"],
@@ -55,13 +59,17 @@ export const PROJECTS_DATA = [
   {
     title: "Iterative Landing Page",
     subTitle: "Product Landing Page",
-    description: "The landing page I build for the Bootstrap module of my bootcamp",
+    description: `This is a project I build for the Bootstrap module of my coding bootcamp. After I had the idea of building a practice app for the React module,
+    a landing page for the app was a natural choice. My goal here was to avoid using a strict grid based layout. The first thing I did to achieve this is
+    use a non-horizontal border for the header section. This is something I have seen on many modern websites. I also experimented a lot with absolute positioning of the images to give the site a 
+    more fluid look and feel. Of course, design is not my strong suit, and it is something I naturally try to avoid. This project helped me realize this about myself. However, good design, like anything else is 
+    a learnable skill and it is something that I will try to improve with practice.`,
     image: iterativeLanding,
     id: 1,
     icons: ["react", "html5", "css3", "sass", "js", "bootstrap"],
     links: [
       { name: "Code", url: "to github" },
-      { name: "View Site", url: "to site" },
+      //{ name: "View Site", url: "to site" },
     ],
   },
 ];
