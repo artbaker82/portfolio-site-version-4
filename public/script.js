@@ -58,11 +58,7 @@ function intersectionHandler(entry) {
 
 const contactLinks = document.querySelectorAll(".icon-link");
 
-const textConfig = {
-  email: ["Email me at artbaker82@gmail.com"],
-  github: ["View my Github profile", "https://github.com/artbaker82"],
-  linkedIn: ["View my linkedIn profile", "https://www.linkedin.com/in/arthur-baker-a88818188/"],
-};
+
 
 contactLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {

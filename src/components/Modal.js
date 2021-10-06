@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/modal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import Projects from "./Projects";
+
 
 const Modal = ({ project, handleExit }) => {
   const [showExitBtn, setShowExitBtn] = useState(false);
@@ -28,7 +28,7 @@ const Modal = ({ project, handleExit }) => {
                 console.log(idx);
                 if (idx === 0) {
                   return (
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer">
                       {link.name} <FontAwesomeIcon icon={["fab", "github"]} />
                     </a>
                   );
@@ -45,9 +45,9 @@ const Modal = ({ project, handleExit }) => {
         <div className="tech-stack">
           <div className="sub-header">What I used</div>
           <div className="stack-icon-container">
-            {project.icons.map((icon) => {
+            {project.icons.map((icon, idx) => {
               console.log(icon);
-              return <FontAwesomeIcon icon={["fab", icon]} />;
+              return <FontAwesomeIcon key={idx} icon={["fab", icon]} />;
             })}
           </div>
         </div>
